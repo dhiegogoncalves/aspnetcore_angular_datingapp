@@ -1,7 +1,6 @@
-using DatingApp.Api.Data;
+using DatingApp.Api.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,11 +18,11 @@ namespace DatingApp.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationServices(_config);
+            services.AddIdentityServices(_config);
 
             services.AddControllers();
             services.AddCors();
-
-            services.AddDbContext<DataContext>(options => options.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
             services.AddSwaggerGen(c =>
             {
@@ -46,6 +45,7 @@ namespace DatingApp.Api
 
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
