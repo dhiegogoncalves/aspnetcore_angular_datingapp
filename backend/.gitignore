@@ -38,3 +38,6 @@ msbuild.wrn
 
 # Visual Studio Code
 .vscode/
+
+# Database
+datingapp.db
