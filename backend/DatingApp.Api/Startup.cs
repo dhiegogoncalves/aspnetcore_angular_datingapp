@@ -43,7 +43,7 @@ namespace DatingApp.Api
 
             app.UseRouting();
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("*"));
 
             app.UseAuthentication();
             app.UseAuthorization();
