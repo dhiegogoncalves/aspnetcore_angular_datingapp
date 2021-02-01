@@ -1,3 +1,6 @@
+import { ServerErrorComponent } from './pages/server-error/server-error.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { ListsComponent } from './pages/lists/lists.component';
@@ -29,8 +32,9 @@ const routes: Routes = [
       },
     ],
   },
-
-  { path: '**', component: HomeComponent, pathMatch: 'full' },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'server-error', component: ServerErrorComponent },
+  { path: '**', component: NotFoundComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
