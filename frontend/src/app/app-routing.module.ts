@@ -1,13 +1,13 @@
-import { ServerErrorComponent } from './pages/server-error/server-error.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AuthGuard } from './_guards/auth.guard';
-import { MessagesComponent } from './pages/messages/messages.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
 import { MemberListComponent } from './pages/members/member-list/member-list.component';
-import { HomeComponent } from './pages/home/home.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { MessagesComponent } from './pages/messages/messages.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ServerErrorComponent } from './pages/server-error/server-error.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
         component: MemberListComponent,
       },
       {
-        path: 'members/:id',
+        path: 'member/:username',
         component: MemberDetailComponent,
       },
       { path: 'lists', component: ListsComponent },

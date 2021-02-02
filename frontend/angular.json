@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "262c5aee-7d12-4d7e-b6cf-cf983c05e7ab"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -47,6 +44,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -133,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "frontend"
+  "defaultProject": "frontend",
+  "cli": {
+    "analytics": "e89a7d78-3e25-438c-9245-bdfd96e6c51d"
+  }
 }
