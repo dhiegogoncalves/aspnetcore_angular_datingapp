@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using DatingApp.Api.Data;
 using DatingApp.Api.DTOs;
 using DatingApp.Api.Entities;
-using DatingApp.Api.Interfaces;
+using DatingApp.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
