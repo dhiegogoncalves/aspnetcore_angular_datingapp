@@ -1,3 +1,4 @@
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,8 @@ import { ServerErrorComponent } from './pages/server-error/server-error.componen
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { SharedModule } from './_modules/shared.module';
 import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
+import { CommonModule } from '@angular/common';
+import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +36,21 @@ import { MemberDetailComponent } from './pages/members/member-detail/member-deta
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
+    MemberEditComponent,
   ],
   imports: [
+    SharedModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    SharedModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
