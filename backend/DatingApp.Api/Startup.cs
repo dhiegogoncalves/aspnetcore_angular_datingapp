@@ -1,4 +1,5 @@
 using DatingApp.Api.Extensions;
+using DatingApp.Api.Helpers;
 using DatingApp.Api.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

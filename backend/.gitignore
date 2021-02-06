@@ -445,4 +445,4 @@ $RECYCLE.BIN/
 datingapp.db
 
 .vscode
-appsettings.Development.json
+DatingApp.Api/appsettings.Development.json

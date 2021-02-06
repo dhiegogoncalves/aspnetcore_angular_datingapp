@@ -22,6 +22,7 @@ import { SharedModule } from './_modules/shared.module';
 import { MemberDetailComponent } from './pages/members/member-detail/member-detail.component';
 import { CommonModule } from '@angular/common';
 import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
+import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MemberEditComponent } from './pages/members/member-edit/member-edit.com
     ServerErrorComponent,
     MemberCardComponent,
     MemberEditComponent,
+    PhotoEditorComponent,
   ],
   imports: [
     SharedModule,

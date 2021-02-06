@@ -39,12 +39,12 @@ namespace DatingApp.Api.Repositories
 
         public async Task<AppUser> GetUserByIdAsync(int id)
         {
-            return await _context.Users.Include(x => x.Photos).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Users.Include(x => x.Photos).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<AppUser> GetUserByUsernameAsync(string username)
         {
-            return await _context.Users.Include(x => x.Photos).AsNoTracking().SingleOrDefaultAsync(x => x.UserName == username);
+            return await _context.Users.Include(x => x.Photos).SingleOrDefaultAsync(x => x.UserName == username);
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
