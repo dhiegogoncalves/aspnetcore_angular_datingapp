@@ -7,8 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { NavComponent } from './components/nav/nav.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavComponent } from './_components/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MemberCardComponent } from './pages/members/member-card/member-card.component';
@@ -23,6 +23,8 @@ import { MemberDetailComponent } from './pages/members/member-detail/member-deta
 import { CommonModule } from '@angular/common';
 import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
 import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.component';
+import { TextInputComponent } from './_components/text-input/text-input.component';
+import { DateInputComponent } from './_components/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.
     MemberCardComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    TextInputComponent,
+    DateInputComponent,
   ],
   imports: [
     SharedModule,
@@ -48,6 +52,7 @@ import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
