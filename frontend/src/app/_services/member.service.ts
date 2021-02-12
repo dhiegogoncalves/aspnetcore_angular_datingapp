@@ -134,4 +134,22 @@ export class MemberService {
       `${this.baseUrl}users/delete-photo/${photoId}`
     );
   }
+
+  addLike(username: string): Observable<void> {
+    return this.http.post<void>(`${this.baseUrl}likes/${username}`, {});
+  }
+
+  getLikes(
+    predicate: string,
+    pageNumber: number,
+    pageSize: number
+  ): Observable<PaginatedResult<Member[]>> {
+    let params = this.getPaginationHeaders(pageNumber, pageSize);
+    params = params.append('predicate', predicate);
+
+    return this.getPaginatedResult<Partial<Member[]>>(
+      `${this.baseUrl}likes`,
+      params
+    );
+  }
 }
