@@ -1,3 +1,4 @@
+import { AdminPanelComponent } from './pages/admin/admin-panel/admin-panel.component';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { MemberEditComponent } from './pages/members/member-edit/member-edit.component';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { AdminGuard } from './_guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,6 +37,11 @@ const routes: Routes = [
       {
         path: 'messages',
         component: MessagesComponent,
+      },
+      {
+        path: 'admin',
+        component: AdminPanelComponent,
+        canActivate: [AdminGuard],
       },
     ],
   },

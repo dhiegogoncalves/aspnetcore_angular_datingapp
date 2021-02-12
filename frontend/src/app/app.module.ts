@@ -25,6 +25,11 @@ import { MemberEditComponent } from './pages/members/member-edit/member-edit.com
 import { PhotoEditorComponent } from './pages/members/photo-editor/photo-editor.component';
 import { TextInputComponent } from './_components/text-input/text-input.component';
 import { DateInputComponent } from './_components/date-input/date-input.component';
+import { AdminPanelComponent } from './pages/admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { UserManagementComponent } from './pages/admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './pages/admin/photo-management/photo-management.component';
+import { RolesModalComponent } from './_components/modals/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +48,11 @@ import { DateInputComponent } from './_components/date-input/date-input.componen
     PhotoEditorComponent,
     TextInputComponent,
     DateInputComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    UserManagementComponent,
+    PhotoManagementComponent,
+    RolesModalComponent,
   ],
   imports: [
     SharedModule,

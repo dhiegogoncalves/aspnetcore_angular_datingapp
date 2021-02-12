@@ -1,12 +1,6 @@
 import { MemberEditComponent } from './../pages/members/member-edit/member-edit.component';
 import { Injectable } from '@angular/core';
-import {
-  CanDeactivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree,
-} from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanDeactivate } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
